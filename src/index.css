@@ -1,0 +1,346 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+
+  --vela-bg: #f7f6f3;
+
+  --vela-card: rgba(255, 255, 255, 0.82);
+
+  --vela-border: rgba(0, 0, 0, 0.05);
+
+  --vela-text: #111111;
+
+  --vela-muted: #78716c;
+
+  --vela-soft: #fafaf8;
+
+}
+
+body {
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(255,255,255,0.9),
+      transparent 45%
+    ),
+    var(--vela-bg);
+
+  color: var(--vela-text);
+
+  font-family:
+    Inter,
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+
+  text-rendering: optimizeLegibility;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d6d3d1;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #bdb8b2;
+}
+
+/* GLOBAL SELECTION */
+
+::selection {
+  background: black;
+  color: white;
+}
+
+/* GLOBAL TRANSITIONS */
+
+button,
+a,
+input,
+textarea,
+select,
+div {
+  transition:
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease,
+    opacity 220ms ease,
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+/* REUSABLE LUXURY CARD */
+
+.vela-card {
+
+  background: var(--vela-card);
+
+  backdrop-filter: blur(16px);
+
+  -webkit-backdrop-filter: blur(16px);
+
+  border-radius: 32px;
+
+  padding: 2rem;
+
+  border: 1px solid var(--vela-border);
+
+  box-shadow:
+    0 1px 2px rgba(0,0,0,0.02),
+    0 10px 40px rgba(0,0,0,0.035);
+
+}
+
+/* INPUT SYSTEM */
+
+.vela-input {
+
+  width: 100%;
+
+  border: 1px solid #e7e5e4;
+
+  background: rgba(255,255,255,0.75);
+
+  backdrop-filter: blur(10px);
+
+  border-radius: 20px;
+
+  padding: 16px 18px;
+
+  outline: none;
+
+  font-size: 15px;
+
+  color: #111111;
+
+}
+
+.vela-input::placeholder {
+  color: #a8a29e;
+}
+
+.vela-input:focus {
+
+  border-color: rgba(0,0,0,0.7);
+
+  background: white;
+
+  box-shadow:
+    0 0 0 4px rgba(0,0,0,0.04);
+
+}
+
+/* BUTTON SYSTEM */
+
+.vela-button {
+
+  background: #111111;
+
+  color: white;
+
+  border-radius: 20px;
+
+  padding: 16px 24px;
+
+  font-weight: 500;
+
+  letter-spacing: -0.01em;
+
+  box-shadow:
+    0 6px 20px rgba(0,0,0,0.12);
+
+}
+
+.vela-button:hover {
+
+  transform: translateY(-2px);
+
+  opacity: 0.96;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.16);
+
+}
+
+.vela-button:active {
+  transform: translateY(0px);
+}
+
+/* TYPOGRAPHY */
+
+.vela-section-title {
+
+  font-size: clamp(28px, 3vw, 38px);
+
+  font-weight: 600;
+
+  letter-spacing: -0.045em;
+
+  line-height: 1;
+
+}
+
+.vela-subtitle {
+
+  color: var(--vela-muted);
+
+  margin-top: 14px;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+}
+
+/* TAG SYSTEM */
+
+.vela-tag {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px 16px;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.75);
+
+  backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(0,0,0,0.04);
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  letter-spacing: -0.01em;
+
+  color: #292524;
+
+}
+
+.vela-tag:hover {
+
+  background: white;
+
+  transform: translateY(-1px);
+
+}
+
+.vela-tag-remove {
+
+  width: 20px;
+
+  height: 20px;
+
+  border-radius: 999px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: rgba(0,0,0,0.06);
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+}
+
+.vela-tag-remove:hover {
+
+  background: black;
+
+  color: white;
+
+}
+
+/* LUXURY SURFACE */
+
+.vela-surface {
+
+  background: rgba(255,255,255,0.55);
+
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(0,0,0,0.04);
+
+}
+
+/* HOVER CARD */
+
+.vela-hover-card:hover {
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.06);
+
+}
+
+/* GLASS EFFECT */
+
+.vela-glass {
+
+  background: rgba(255,255,255,0.65);
+
+  backdrop-filter: blur(20px);
+
+  -webkit-backdrop-filter: blur(20px);
+
+}
+
+/* MOBILE POLISH */
+
+@media (max-width: 768px) {
+
+  .vela-card {
+    padding: 1.5rem;
+    border-radius: 28px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .vela-card {
+    padding: 1.25rem;
+    border-radius: 24px;
+  }
+
+  .vela-input {
+    border-radius: 18px;
+    padding: 14px 16px;
+  }
+
+  .vela-button {
+    border-radius: 18px;
+    padding: 14px 18px;
+  }
+
+  .vela-section-title {
+    font-size: 26px;
+  }
+
+}
